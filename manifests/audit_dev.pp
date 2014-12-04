@@ -1,5 +1,5 @@
 # Not Audited
-class profiles::notaudited {
+class profiles::audit_dev {
   include profiles::base
 
   package { 'audit':
