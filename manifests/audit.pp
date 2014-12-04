@@ -4,5 +4,5 @@ class profiles::audit {
   $installed = hiera('audit_installed')
 
   include profiles::base
-  include audit
+  include ::audit
 }
