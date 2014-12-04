@@ -1,5 +1,5 @@
-# Audited
-class profiles::audit_prod {
+# Audit Status
+class profiles::audit {
   # Hiera Lookups
   $installed = hiera('audit_installed')
 
