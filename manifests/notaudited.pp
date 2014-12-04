@@ -2,7 +2,7 @@
 class profiles::notaudited {
   include profiles::base
 
-  package { ['audit','audit-libs']:
+  package { 'audit':
     ensure => absent,
   }
 }
