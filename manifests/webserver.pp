@@ -33,8 +33,7 @@ class profiles::webserver (
   # Clone the sample data to our docroot
   exec {'getit':
     path    => '/bin:/usr/bin',
-    command => 'git clone https://github.com/puppetlabs/exercise-webpage.git /var/www/www.pltest.com',
-    unless  => 'test -f /var/www/www.pltest.com/index.html',
+    command => '/usr/bin/git clone https://github.com/puppetlabs/exercise-webpage.git /var/www/www.pltest.com',
     require => [ File['/var/www/www.pltest.com'], Exec['cleanit'] ],
   }
 
