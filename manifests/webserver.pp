@@ -34,7 +34,7 @@ class profiles::webserver (
   exec {'getit':
     path    => '/bin:/usr/bin',
     command => 'git clone https://github.com/puppetlabs/exercise-webpage.git /var/www/www.pltest.com',
-    onlyif  => 'test -f /var/www/www.pltest.com/index.html',
+    unless  => 'test -f /var/www/www.pltest.com/index.html',
     require => File['/var/www/www.pltest.com'],
   }
 
