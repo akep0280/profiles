@@ -35,7 +35,12 @@ class profiles::webserver (
     path    => '/bin:/usr/bin',
     command => 'git clone https://github.com/puppetlabs/exercise-webpage.git /var/www/www.pltest.com',
     unless  => 'test -f /var/www/www.pltest.com/index.html',
-    require => File['/var/www/www.pltest.com'],
+    require => [ File['/var/www/www.pltest.com'], Exec['cleanit'] ],
   }
 
+  # Clear the old content before pulling the latest
+  exec {'cleanit':
+    path    => '/bin:/usr/bin',
+    command => '/bin/rm -rf /var/www/www.pltest.com/*',
+  }
 }
