@@ -41,6 +41,6 @@ class profiles::webserver (
   exec {'cleanit':
     path    => '/bin:/usr/bin',
     command => '/bin/rm -rf /var/www/www.pltest.com',
-    onlyif  => '/bin/test -f /var/www/www.pltest.com',
+    onlyif  => '/usr/bin/test -f /var/www/www.pltest.com',
   }
 }
