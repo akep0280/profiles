@@ -37,7 +37,6 @@ class profiles::webserver (
     ensure   => 'latest',
     provider => 'git',
     source   => 'https://github.com/puppetlabs/exercise-webpage.git',
-    revision => 'development',
     require  => File['/var/www/www.pltest.com'],
   }
 }
