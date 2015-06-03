@@ -36,7 +36,7 @@ class profiles::webserver (
   vcsrepo {'/var/www/www.pltest.com':
     ensure   => 'latest',
     provider => 'git',
-    source   => 'git://github.com/puppetlabs/exercise-webpage.git',
+    source   => 'https://github.com/puppetlabs/exercise-webpage.git',
     revision => 'development',
     require  => File['/var/www/www.pltest.com'],
   }
