@@ -5,7 +5,7 @@ class profiles::webserver (
 ){
   class { 'nginx': }
 
-  nginx::resoure::vhost { 'www.pltest.com':
+  nginx::resource::vhost { 'www.pltest.com':
     www_root    => '/var/www/www.pltest.com',
     listen_port => "${port}",
   }
