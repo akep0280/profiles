@@ -40,6 +40,6 @@ class profiles::webserver (
   # Clear the old content before pulling the latest
   exec {'cleanit':
     path    => '/bin:/usr/bin',
-    command => '/bin/rm -rf /var/www/www.pltest.com/*',
+    command => '/bin/rm -rf /var/www/www.pltest.com',
   }
 }
